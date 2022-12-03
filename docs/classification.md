@@ -38,7 +38,7 @@ Description.
   **Returns** 
 
 
-<br>
+<br><br>
 
   ```python
 _scale_data(self, X_train, X_val)
@@ -53,7 +53,7 @@ Description.
   **Returns** 
 
 
-<br>
+<br><br>
 
 ```python
 _encode_labels(self, y_train, y_val)
@@ -66,5 +66,6 @@ Description.
 
 
   **Returns** 
+  
 
-
+  <br><br>
