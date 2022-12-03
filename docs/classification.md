@@ -1,8 +1,9 @@
 # Classification
 ___
 
+- [Deep Classifier](#deep)
 
-## Deep Classifier
+## Deep Classifier<id=deep>
 
 ```python
 class mltoolbox.classification.DeepClassifier(model_path=None, io=None, _load_model=False)
