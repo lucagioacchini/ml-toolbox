@@ -5,7 +5,9 @@ ___
 
 Description.
 
-**Attributes** 
-  - `int` `optional` `default = 10`
+**Parameters** 
+  - *model_path*(_str_) --  Description
+  - *io*(_tuple_) --  Description
+  - *_load_model*(_bool_) --  Description
 
-   Description of the option.
+
