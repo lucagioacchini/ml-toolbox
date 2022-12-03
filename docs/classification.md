@@ -11,7 +11,7 @@ ___
 class mltoolbox.classification.DeepClassifier(model_path=None, io=None, _load_model=False)
 
 ```
-[source code](./mloolbox/classification/deep_classifier.py)
+[source code](./../mloolbox/classification/deep_classifier.py)
 
 Description.
 
