@@ -52,6 +52,7 @@ Description.
   **Returns** 
 
 
+<br>
 
     ```python
 _encode_labels(self, y_train, y_val)
