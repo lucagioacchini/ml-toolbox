@@ -1,4 +1,4 @@
 # ML-Toolbox
 ___
 
-[classification](https://github.com/SmartData-Polito/darkvec#proj)
+[classification](https://github.com/lucagioacchini/MLToolbox/blob/master/docs/classification.md)
