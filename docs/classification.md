@@ -6,5 +6,5 @@ Description.
 
   **Parameters** 
    - **model_path**(_str_) - Description
-    - **io**(_tuple_) - Description
-    - **_load_model**(_bool_) - Description
+   - **io**(_tuple_) - Description
+   - **_load_model**(_bool_) - Description
