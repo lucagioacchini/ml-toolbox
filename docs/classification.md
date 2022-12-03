@@ -1,8 +1,8 @@
 # Classification
 ___
 
-#### 
-```python
+
+#### ```python
 DeepClassifier(model_path=None, io=None, _load_model=False)`
 
 ```
