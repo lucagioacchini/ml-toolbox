@@ -5,13 +5,13 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name='MLtoolbox',
-    version=None,
-    author=None,
-    author_email=None,
+    version=0.0.0,
+    author='Luca Gioacchini',
+    author_email='luca.gioacchini@polito.it',
     description='Testing installation of Package',
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url='https://github.com/mike-huls/toolbox',
-    packages=['toolbox'],
+    url='https://github.com/lucagioacchini/MLToolbox',
+    packages=['mltoolbox'],
     install_requires=['gensim', 'numpy', 'pandas', 'sklearn'],
 )
