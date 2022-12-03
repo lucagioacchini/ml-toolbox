@@ -12,6 +12,5 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url='https://github.com/lucagioacchini/MLToolbox',
-    packages=['mltoolbox'],
-    install_requires=['gensim', 'numpy', 'pandas', 'sklearn'],
+    packages=['mltoolbox']
 )
