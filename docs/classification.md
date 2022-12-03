@@ -21,7 +21,7 @@ Description.
    - **io**(_tuple_) - Description
    - **_load_model**(_bool_) - Description
 
-  **Methods** 
+ ### **Methods** 
   
   
 
