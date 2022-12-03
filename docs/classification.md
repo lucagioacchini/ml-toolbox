@@ -27,13 +27,13 @@ Description.
   _init_model(io)
 
   ```
-  Description.
+ Description.
 
-    **Parameters** 
-     - **io**(_tuple_) - Description
+   **Parameters** 
+    - **io**(_tuple_) - Description
 
 
-    **Returns** 
+   **Returns** 
   
   ```python
 _scale_data(self, X_train, X_val)
