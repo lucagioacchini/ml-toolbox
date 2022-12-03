@@ -2,7 +2,7 @@
 ___
 
 
-### Deep Classifier
+## Deep Classifier
 
 ```python
 class mltoolbox.classification.DeepClassifier(model_path=None, io=None, _load_model=False)
@@ -10,13 +10,13 @@ class mltoolbox.classification.DeepClassifier(model_path=None, io=None, _load_mo
 ```
 Description.
 
-  **Parameters** 
+ ### **Parameters** 
    - **model_path**(_str_) - Description
    - **io**(_tuple_) - Description
    - **_load_model**(_bool_) - Description
 
 
-  **Attributes** 
+ ###  **Attributes** 
    - **model_path**(_str_) - Description
    - **io**(_tuple_) - Description
    - **_load_model**(_bool_) - Description
