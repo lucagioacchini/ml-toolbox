@@ -2,6 +2,8 @@
 ___
 
 - [Deep Classifier](#deep-classifier)
+- [Random Forest](#random-forest)
+- [k-Nearest-Neighbors Classifier](#k-nearest-neighbors-classifier)
 
 ## Deep Classifier
 
