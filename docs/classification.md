@@ -21,6 +21,8 @@ Description.
    - **io**(_tuple_) - Description
    - **_load_model**(_bool_) - Description
 
+  **Methods** 
+
 ```python
 _init_model(io)
 
@@ -32,3 +34,29 @@ Description.
 
 
   **Returns** 
+  
+  ```python
+_scale_data(self, X_train, X_val)
+
+```
+Description.
+
+  **Parameters** 
+   - **io**(_tuple_) - Description
+
+
+  **Returns** 
+  
+    ```python
+_encode_labels(self, y_train, y_val)
+
+```
+Description.
+
+  **Parameters** 
+   - **io**(_tuple_) - Description
+
+
+  **Returns** 
+
+
