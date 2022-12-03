@@ -45,7 +45,8 @@ Description.
  array([0, 0, 0, ...]))
 
 >>> from mltoolbox.classification import DeepClassifier
->>> from keras import layers # Define architecture
+>>> from keras import layers 
+>>> # Define architecture
 >>> inputs = layers.Input((4,))
 >>> hidden = layers.Dense(64, activation='relu')(inputs)
 >>> outputs = layers.Dense(2, activation='softmax')(hidden)
