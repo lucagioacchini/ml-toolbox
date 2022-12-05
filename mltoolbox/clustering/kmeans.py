@@ -10,7 +10,6 @@ class kMeans():
                  random_state=None, algorithm='auto'):
         self.model_path=model_path
         self.scaler = StandardScaler()
-        self.neighbors, self.y_train = None, None
         self.model = KMeans(n_clusters, init=init, n_init=n_init, 
                             max_iter=max_iter, tol=tol, algorithm=algorithm,
                             random_state=random_state)
