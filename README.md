@@ -1,4 +1,5 @@
 # ML-Toolbox
 ___
 
-[classification](./docs/classification.md)
+[Preprocessing](./docs/preprocessing.md)
+[Classification](./docs/classification.md)
