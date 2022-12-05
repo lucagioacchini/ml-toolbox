@@ -69,8 +69,6 @@ class DeepClassifier():
         _type_
             _description_
         """
-        # Fit the scaler on training data
-        self.scaler.fit(X_train)
         # Scale training data
         X_train = self.scaler.transform(X_train)
         # If provided, scale validation data
@@ -106,7 +104,7 @@ class DeepClassifier():
         return y_train, y_val
 
     
-    def fit(self, training_data, validation_data = None, scale_data=True, 
+    def fit(self, training_data, validation_data=None, scale_data=True, 
             epochs=10, batch_size=256, verbose=1, save=False):
         """_summary_
 
@@ -142,6 +140,8 @@ class DeepClassifier():
         
         # Data standardization
         if scale_data:
+            # Fit the scaler on training data
+            self.scaler.fit(X_train)
             X_train, X_val = self._scale_data(X_train, X_val)
         
         # Encode labels through One-Hot-Encoding
@@ -155,7 +155,6 @@ class DeepClassifier():
         # Train the classifier
         if save:
             # Save the best model according to the max val_accuracy
-            print(self.model_path)
             saver = ModelCheckpoint(filepath=f'{self.model_path}_classifier.h5',
                                     monitor='val_accuracy', mode='max', 
                                     save_best_only=True, verbose=False)
