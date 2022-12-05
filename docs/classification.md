@@ -4,14 +4,14 @@ ___
 - [Deep Classifier](#deep-classifier)
 - [k-Nearest-Neighbors Classifier](#k-nearest-neighbors-classifier)
 
-___
-## Deep Classifier
-[`source code`](./../mltoolbox/classification/deep_classifier.py)
 
+## Deep Classifier
+___
 ```python
 class mltoolbox.classification.DeepClassifier(model_path=None, io=None, _load_model=False)
 
 ```
+[`source code`](./../mltoolbox/classification/deep_classifier.py)
 
 Description.
 
@@ -70,12 +70,13 @@ array([0, 0, 0, 0, 1])
 
 ___
 ## K-Nearest-Neighbors-Classifier
-[`source code`](./../mltoolbox/classification/knn_classifier.py)
-
+___
 ```python
 class mltoolbox.classification.KnnClassifier(n_neighbors=7, model_path=None, metric='cosine', _load_model=False)
 
 ```
+[`source code`](./../mltoolbox/classification/knn_classifier.py)
+
 Description.
 
  ### **Parameters** 
