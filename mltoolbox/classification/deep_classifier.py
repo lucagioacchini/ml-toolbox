@@ -1,3 +1,5 @@
+# type: ignore
+
 from sklearn.preprocessing import StandardScaler
 from ..preprocessing import OneHotLabelEncoder
 from keras.models import load_model, Model
@@ -6,18 +8,19 @@ import numpy as np
 import joblib
 
 class DeepClassifier():
-    def __init__(self, model_path=None, io=None, _load_model=False):
-        """_summary_
+    """_summary_
 
-        Parameters
-        ----------
-        model_path : _type_, optional
-            _description_, by default None
-        io : _type_, optional
-            _description_, by default None
-        _load_model : bool, optional
-            _description_, by default False
-        """
+    Parameters
+    ----------
+    model_path : _type_, optional
+        _description_, by default None
+    io : _type_, optional
+        _description_, by default None
+    _load_model : bool, optional
+        _description_, by default False
+    """
+    def __init__(self, model_path=None, io=None, _load_model=False):
+        self.model_path=model_path
         self.model = None
         self.scaler = StandardScaler()
         self.label_encoder = OneHotLabelEncoder()
@@ -25,13 +28,11 @@ class DeepClassifier():
         # If input and output layers are provided, init the classifier
         if type(io)==tuple:
             self.model=self._init_model(io)
-            # Save the best model according to the max val_accuracy
-            self.saver = ModelCheckpoint(filepath=model_path,
-                                    monitor='val_accuracy', mode='max', 
-                                    save_best_only=True, verbose=False)
             
         if _load_model:
-            self.model = load_model(model_path)
+            self.model = load_model(f'{self.model_path}_classifier.h5')
+            self.scaler = joblib.load(f'{self.model_path}_scaler.save')
+            self.label_encoder = joblib.load(f'{self.model_path}_ohle.save')
 
             
     def _init_model(self, io):
@@ -134,7 +135,7 @@ class DeepClassifier():
         # Get training datasets
         X_train, y_train = training_data
         # If provided, get validation datasets
-        if type(validation_data)==tuple: 
+        if type(validation_data)==tuple:
             X_val, y_val = validation_data
         else:
             X_val, y_val = None, None
@@ -153,11 +154,19 @@ class DeepClassifier():
         
         # Train the classifier
         if save:
-            history = self.modelfit(X_train, y_train, epochs=epochs, 
+            # Save the best model according to the max val_accuracy
+            print(self.model_path)
+            saver = ModelCheckpoint(filepath=f'{self.model_path}_classifier.h5',
+                                    monitor='val_accuracy', mode='max', 
+                                    save_best_only=True, verbose=False)
+
+            history = self.model.fit(X_train, y_train, epochs=epochs, 
                                 validation_data=validation_data,
                                 batch_size=batch_size, shuffle=True, 
                                 sample_weight=self.label_encoder.weights, 
-                                callbacks=[self.saver], verbose=verbose) 
+                                callbacks=[saver], verbose=verbose) 
+            joblib.dump(self.scaler, f'{self.model_path}_scaler.save')
+            joblib.dump(self.label_encoder, f'{self.model_path}_ohle.save')
         else:
             history = self.model.fit(X_train, y_train, epochs=epochs, 
                                 validation_data=validation_data,
