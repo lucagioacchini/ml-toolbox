@@ -27,6 +27,7 @@ Description.
 ```python
 >>> # Define a generic label array
 >>> y = np.asarray(['label1', 'label2', 'label1', 'label1', 'label2'])
+>>> from mltoolbox.preprocessing import OneHotLabelEncoder
 >>> # Fit the One-Hot label encoder
 >>> ohle = OneHotLabelEncoder()
 >>> ohle.fit(y)
