@@ -25,7 +25,7 @@ class KnnClassifier():
         self.scaler = StandardScaler()
         self.neighbors, self.y_train = None, None
         self.model = KNeighborsClassifier(n_neighbors=n_neighbors, 
-                                          metric=metric)
+                                          metric=metric, n_jobs=-1)
                     
         if _load_model:
             self.scaler = joblib.load(f'{self.model_path}_knn_scaler.save')
