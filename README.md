@@ -4,3 +4,4 @@ ___
 - [Preprocessing](./docs/preprocessing.md)
 - [Classification](./docs/classification.md)
 - [Clustering](./docs/clustering.md)
+- [Representation](./docs/representation.md)

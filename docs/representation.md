@@ -11,7 +11,7 @@ class mltoolbox.representation.iWord2Vec(c=5, e=64, epochs=1, source=None,
                                          destination=None, seed=15)
 
 ```
-[`source code`](./../mltoolbox/preprocessing/iword2vec.py)
+[`source code`](./../mltoolbox/representation/iword2vec.py)
 
 Description.
 
