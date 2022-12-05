@@ -26,14 +26,18 @@ Description.
  ### **Examples** 
 
 ```python
->>> # Define a generic label array
+>>> # Define the corpus as a list of list of strings
 >>> corpus = [['Lorem', 'ipsum', 'dolor', 'sit', 'amet', 'consectetur'], 
 ...           ['adipiscing', 'elit', 'sed', 'do'], 
 ...           ['eiusmod', 'tempor', 'incididunt', 'ut', 'labore', 'et', 'dolore']] 
+>>> from mltoolbox.representation import iWord2Vec
+>>> # Initialize the model
 >>> word2vec = iWord2Vec(c=2, e=10, epochs=1, seed=15)
+>>> # Train the initialized model
 >>> word2vec.train(corpus)
+>>> # Retrieve the embeddings after the first training
 >>> embeddings = word2vec.get_embeddings()
->>> print(embeddings.shape)
+>>> print(embeddings.shape) # Get the vocabulary size and the embeddings size
 >>> embeddings.head(3)
 
 (17, 10)
@@ -47,11 +51,22 @@ dolore -0.091163 -0.011349  0.014431
 elit   -0.008497 -0.046373  0.095279  
 ipsum   0.088425  0.077777 -0.096294  
 
+>>> # Get a new corpus with new words
 >>> corpus = [['magna', 'aliqua', 'Ut', 'enim', 'ad', 'minim', 'veniam', 'quis'],
 ...           ['nostrud', 'exercitation', 'ullamco', 'laboris', 'nisi', 'ut']]
+>>> # Update the existing model with the new corpus
 >>> word2vec.update(corpus)
+>>> # Retrieve the updated embeddings
 >>> new_embeddings = word2vec.get_embeddings()
->>> print(new_embeddings.shape)
+>>> print(new_embeddings.shape) # Get the vocabulary and the embeddings size
 
 (30, 10)
+
+>>> # Remove the embeddings for a word
+>>> del_embeddings(word2vec, ['dolore'])
+>>> # Check the new vocabulary size
+>>> final_embeddings = word2vec.get_embeddings()
+>>> print(final_embeddings.shape)
+
+(29, 10)
 ```
