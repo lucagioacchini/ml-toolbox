@@ -134,7 +134,7 @@ class KnnClassifier():
             y_pred = self._majority_voting(neighbors)
         else: # Classic fit-predict
             if scale_data:
-                self.scaler.transform(X)
+                X = self.scaler.transform(X)
             y_pred = self.model.predict(X)
         
         return y_pred
