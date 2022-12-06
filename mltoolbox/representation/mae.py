@@ -23,7 +23,7 @@ class MultimodalAE():
             self._load_model()
 
     def _load_model(self):
-        self.model = load_model(f'{self.model_path}_mae.h5')
+        self.model = load_model(f'{self.model_path}_mae')
         i,o = self.extract_encoder()
         self.encoder = Model(i,o)
         self.scaler = joblib.load(f'{self.model_path}_scaler.save')
@@ -79,7 +79,7 @@ class MultimodalAE():
         # Train the classifier
         if save:
             # Save the best model according to the max val_accuracy
-            saver = ModelCheckpoint(filepath=f'{self.model_path}_mae.h5',
+            saver = ModelCheckpoint(filepath=f'{self.model_path}_mae',
                                     monitor='val_loss', mode='min', 
                                     save_best_only=True, verbose=False)
 

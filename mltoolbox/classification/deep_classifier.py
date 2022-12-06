@@ -30,7 +30,7 @@ class DeepClassifier():
             self.model=self._init_model(io)
             
         if _load_model:
-            self.model = load_model(f'{self.model_path}_classifier.h5')
+            self.model = load_model(f'{self.model_path}_classifier')
             self.scaler = joblib.load(f'{self.model_path}_scaler.save')
             self.label_encoder = joblib.load(f'{self.model_path}_ohle.save')
 
@@ -155,7 +155,7 @@ class DeepClassifier():
         # Train the classifier
         if save:
             # Save the best model according to the max val_accuracy
-            saver = ModelCheckpoint(filepath=f'{self.model_path}_classifier.h5',
+            saver = ModelCheckpoint(filepath=f'{self.model_path}_classifier',
                                     monitor='val_accuracy', mode='max', 
                                     save_best_only=True, verbose=False)
 
