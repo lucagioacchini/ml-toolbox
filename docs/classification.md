@@ -121,6 +121,11 @@ array([0 1 0 0 1 1 1 1])
 >>> y_pred = knn.predict(X_val, scale_data=True, loo=False)
 
 array([0, 0, 1, 0, 0])
+
+>>> # Get k-nearest-neighbors class probability
+>>> knn.predict_proba(to_keep)
+
+array([0.4, 0.4, 0.8, 0.4, 0.4, 0.6, 0.4, 0.6, 0.6, 0.8, 0.8])
 ```
 
 

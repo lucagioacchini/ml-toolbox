@@ -1,5 +1,3 @@
-# type: ignore
-
 from sklearn.preprocessing import StandardScaler
 from sklearn.neighbors import KNeighborsClassifier
 import numpy as np
@@ -138,3 +136,25 @@ class KnnClassifier():
             y_pred = self.model.predict(X)
         
         return y_pred
+
+    def predict_proba(self, X):
+        """_summary_
+
+        Parameters
+        ----------
+        X : _type_
+            _description_
+
+        Returns
+        -------
+        _type_
+            _description_
+        """
+        y_neigh = self.y[self.model.kneighbors()[1][X]]
+        y_true  = self.y[X]
+        N = self.model.n_neighbors
+        pairs = zip(y_true, y_neigh)
+        probas = [np.where(b==a)[0].shape[0]/N for a,b in pairs]
+        probas = np.asarray(probas)
+        
+        return probas

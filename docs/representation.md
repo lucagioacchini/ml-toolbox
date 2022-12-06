@@ -129,6 +129,7 @@ Description.
 >>> loss = {'out1':'mse', 'out2':'mse'} # Mean Squared Errors
 >>> weights = {'out1':15/35, 'out2':20/35} # Balance losses
 >>> 
+>>> from mltoolbox.representation import MultimodalAE
 >>> mae = MultimodalAE(io=(inputs, outputs), losses=loss, weights=weights)
 >>> # Fit the multi-modal autoencoder
 >>> mae.fit(training_data=(X_train, X_train), y_sizes=[15, 20], epochs=3)
