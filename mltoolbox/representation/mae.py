@@ -55,22 +55,23 @@ class MultimodalAE():
             scale_data=True, epochs=10, batch_size=256, save=False):
         # Get training datasets
         X_train, y_train = training_data
-        y_train = self._extract_y(y_train, y_sizes)
 
         # If provided, get validation datasets
         if type(validation_data)==tuple:
             X_val, y_val = validation_data
-            y_val = self._extract_y(y_val, y_sizes)
         else:
             X_val, y_val = None, None
-        
+
         # Data standardization
         if scale_data:
             # Fit the scaler on training data
             self.scaler.fit(X_train)
             X_train, X_val = self._scale_data(X_train, X_val)
 
+        y_train = self._extract_y(X_train, y_sizes)
+
         if type(X_val)!=type(None) and type(y_val)!=type(None):
+            y_val = self._extract_y(X_val, y_sizes)
             validation_data = (X_val, y_val)
         else:
             validation_data = None
