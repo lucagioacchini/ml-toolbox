@@ -2,6 +2,7 @@
 ___
 
 - [iWord2Vec](#iword2vec)
+- [Multi-modal Autoencoder (MAE)](#multi-modal-autoencoder)
 
 
 ## iWord2Vec
