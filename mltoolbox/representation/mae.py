@@ -40,14 +40,15 @@ class MultimodalAE():
 
     def _extract_y(self, y, y_size):
         _y = []
+        cnt = 0
         for i in range(len(y_size)):
             if i == 0:
                 _y.append(y[:, :y_size[i]])
             elif i == len(y_size)-1:
-                _y.append(y[:, y_size[i-1]:])
+                _y.append(y[:, cnt:])
             else:
-                _y.append(y[:, y_size[i-1]:y_size[i]])
-
+                _y.append(y[:, cnt:cnt+y_size[i]])
+            cnt+=y_size[i]
         return _y
     
     def fit(self, training_data, validation_data=None, y_sizes=[], verbose=1,
@@ -55,6 +56,7 @@ class MultimodalAE():
         # Get training datasets
         X_train, y_train = training_data
         y_train = self._extract_y(y_train, y_sizes)
+
         # If provided, get validation datasets
         if type(validation_data)==tuple:
             X_val, y_val = validation_data
