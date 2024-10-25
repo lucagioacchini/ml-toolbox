@@ -1,13 +1,16 @@
-# type: ignore
+from setuptools import setup, find_packages
 
-import setuptools
-
-with open("README.md", "r", encoding="utf-8") as fh:
-    long_description = fh.read()
-
-setuptools.setup(
-    version='0.0.1',
+setup(
     name='mltoolbox',
-    packages=['mltoolbox'],
-    install_requires=['requests']
+    version='0.1',
+    packages=find_packages(),
+    install_requires=[
+        'scikit-learn==1.5.2',
+        'keras==3.6.0',
+        'tensorflow==2.18.0',
+        'python-louvain==0.16',
+        'pandas==2.2.3',
+        'gensim==4.3.3'
+    ],
+    include_package_data=True,
 )

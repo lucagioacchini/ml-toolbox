@@ -64,7 +64,7 @@ ipsum   0.088425  0.077777 -0.096294
 (30, 10)
 
 >>> # Remove the embeddings for a word
->>> del_embeddings(word2vec, ['dolore'])
+>>> word2vec.del_embeddings(['dolore'])
 >>> # Check the new vocabulary size
 >>> final_embeddings = word2vec.get_embeddings()
 >>> print(final_embeddings.shape)

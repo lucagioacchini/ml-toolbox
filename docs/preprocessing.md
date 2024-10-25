@@ -46,5 +46,5 @@ Description.
 >>> # Recover the original labels
 >>> ohle.inverse_transform(most_probable)
 
-array(['label1', 'label2', 'label1', 'label1', 'label2'], dtype='<U6')
+array(['label1', 'label2', 'label1', 'label1', 'label2'])
 ```
