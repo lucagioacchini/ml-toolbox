@@ -40,9 +40,9 @@ class DeepClassifier():
         >>> X_train, y_train
 
         >>> (array([[0.61798233, 0.65360835, 0.1029108 , 0.54929112],
-        >>>         [0.89883498, 0.53387149, 0.30059125, 0.26111361],
-        >>>         [0.23928837, 0.20361755, 0.35225478, 0.76946751], 
-        >>>         [     ...                               ...     ]),
+        ...         [0.89883498, 0.53387149, 0.30059125, 0.26111361],
+        ...         [0.23928837, 0.20361755, 0.35225478, 0.76946751], 
+        ...         [     ...                               ...     ]),
         >>> array([0, 0, 0, ...]))
 
         >>> from mltoolbox.classification import DeepClassifier
@@ -57,16 +57,16 @@ class DeepClassifier():
         >>> classifier.fit(training_data=(X_train, y_train), scale_data=True, epochs=3)
 
         >>> Epoch 1/3
-        >>> 1/1 [==============================] - 0s 482ms/step - loss: 0.6901 - accuracy: 0.7000
-        >>> Epoch 2/3
-        >>> 1/1 [==============================] - 0s 4ms/step - loss: 0.6846 - accuracy: 0.7000
-        >>> Epoch 3/3
-        >>> 1/1 [==============================] - 0s 4ms/step - loss: 0.6792 - accuracy: 0.7500
+        ... 1/1 [==============================] - 0s 482ms/step - loss: 0.6901 - accuracy: 0.7000
+        ... Epoch 2/3
+        ... 1/1 [==============================] - 0s 4ms/step - loss: 0.6846 - accuracy: 0.7000
+        ... Epoch 3/3
+        ... 1/1 [==============================] - 0s 4ms/step - loss: 0.6792 - accuracy: 0.7500
 
         >>> # Predict the validation labels
         >>> classifier.predict(X_val)
 
-        array([0, 0, 0, 0, 1])
+        >>> array([0, 0, 0, 0, 1])
     """
 
     def __init__(self, model_path: str = None, io: tuple = None, _load_model: bool = False):
